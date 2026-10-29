@@ -1,0 +1,67 @@
+.ghx-hidden,
+.dashboard-changelog { display: none !important; }
+
+.feed-background { min-height: calc(100vh - var(--ghx-top, 64px)) !important; }
+.feed-background .dashboard-sidebar { max-height: calc(100vh - var(--ghx-top, 64px)) !important; }
+.feed-background .dashboard-sidebar .overflow-y-auto { scrollbar-width: none; }
+@media (min-width: 768px) { .feed-background .feed-left-sidebar { border-bottom: 0 !important; } }
+.feed-background > :has(> footer.footer) { display: flex; flex-direction: column; }
+.feed-background footer.footer { margin-top: auto; }
+
+#ghx-repos > li > button { cursor: pointer; }
+#ghx-repos [aria-expanded="false"] ~ ul { display: none; }
+#ghx-repos .ghx-trailing {
+  grid-area: trailingVisual;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 20px;
+  color: var(--fgColor-muted);
+}
+#ghx-repos .ghx-count { font-size: var(--text-body-size-small, 12px); }
+#ghx-repos .ghx-chevron { transition: transform .2s ease; }
+#ghx-repos [aria-expanded="true"] .ghx-chevron { transform: rotate(180deg); }
+
+#ghx-dashboard .ghx-section { margin-bottom: 16px; }
+#ghx-dashboard .ghx-section-title {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  margin: 0 0 12px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--fgColor-muted);
+}
+#ghx-dashboard .ghx-box {
+  border: 1px solid var(--borderColor-muted);
+  border-radius: 12px;
+  background: var(--bgColor-default);
+}
+#ghx-dashboard .ghx-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 16px;
+}
+#ghx-dashboard .ghx-row + .ghx-row { border-top: 1px solid var(--borderColor-muted); }
+#ghx-dashboard .ghx-strong { flex-shrink: 0; font-weight: 600; color: var(--fgColor-default); }
+#ghx-dashboard .ghx-muted { color: var(--fgColor-muted); }
+#ghx-dashboard .ghx-ellipsis {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+#ghx-dashboard .ghx-pin-link {
+  display: flex;
+  flex: 1;
+  min-width: 0;
+  align-items: center;
+  gap: 8px;
+}
+#ghx-dashboard .ghx-pin-icon { flex-shrink: 0; color: var(--fgColor-muted); }
+
+#ghx-pin { margin-right: 8px; }
+
+footer.footer .Stack:has(#dashboard-preview-menu-button) { margin: 0 8px !important; }
